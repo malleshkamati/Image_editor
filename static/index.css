@@ -82,7 +82,6 @@ p{
     height: 30%;
     width: 80%;
     border-radius: 10px;
-    background-color: #888;
     margin: 5px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -95,7 +94,9 @@ p{
   height: 120%;
   width: 105%;
 }
-
+.outer-box input[type="file"]{
+  background-image:linear-gradient(141deg,#1eb1db,#9c26d7,#1eb1db);
+}
 .buttonclass select,
 .buttonclass input[type="text"],
 .buttonclass input[type="number"],
