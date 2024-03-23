@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta name="robots" content="index, follow"> -->
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+        <link rel="stylesheet"  href="/static/home.css">
+        <title>Image Editing App</title>
+    </head>
+<body>
+    <div class="header-wrap">
+        <header id="header">
+            <!-- logo of website -->
+            <a id="logo" href="/"  aria-label="Photo editor ">
+                <img src="/static/logo.png"  width="160" height="38" />
+            </a>
+            <!-- pricing -->
+            <div class="head-links"><a href="" class="head-link" style="color:#fff;font-size: 14px;font-weight: bold;"></a>
+            </div>
+            <!-- signin -->
+            <div id="head-login" class="head-text-button" title="signin here!" aria-label="headerLoginEditor" style="color:#fff;font-size: 14px;font-weight: bold;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ic">
+                    <path fill="#fff" d="M10 12c-2.67 0-8 1.15-8 3.43V18h16v-2.57c0-2.28-5.33-3.43-8-3.43zm0-10C7.79 2 6 3.79 6 6s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                </svg>Sign up / Log in
+            </div>
+        </header>
+    </div>
+
+    <section id="photo-editor-section">
+        <div id="image-editor-space"></div>
+        <div id="image-generator-top" class="wrap">
+            <div id="photo-editing-text">
+                <h1>Free Online<strong>Image Modifier</strong>Designing and Enhancing the images </h1>
+                <p>The suite for all your creative photo and design editing needs directly in your desktop, all free. The only limit is your imagination!</p>
+                <br>
+                <!-- two boxes -->
+                <div class="buttons top-60">
+                    <a href="{{ url_for('features') }}" class="button outline large rounded"><img src="/static/image1 (5).png"  width="24" height="24">Background Addition</a>
+                    <a href="{{ url_for('features') }}"  class="button outline large rounded"><img src="/static/image1 (3).png"  width="24" height="24">Background Remover</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="image-editor-grow"></div>
+        <div id="app-selector-section">
+            <div class="wrap suite">
+                <a id="editor" href="{{ url_for('features') }}" class="is-desktop" title="advanced photoshop online">
+                    <img src="/static/photo1.png" width="96" height="96"> 
+                    <h2> Editor</h2>
+                    <span>Advanced Photo Editor</span>
+                </a>
+                <a id="express" href="{{ url_for('features') }}" title="ai photo editor">
+                    <img src="/static/photo2.png" width="96" height="96" >
+                    <h2> Express</h2>
+                    <span> Photo Editor</span>
+                </a>
+                <a id="designer" href="{{ url_for('features') }}" class="is-desktop" title="Design anything canva templates">
+                    <img src="/static/photo3.png" width="96" height="96" >
+                    <h2> Designer</h2>
+                    <span>Template & Animate</span>
+                </a>
+                <a id="remove-background" href="{{ url_for('features') }}" title="remove background white bg">
+                    <img src="/static/photo4.png" width="96" height="96" >
+                    <h2>Remove bg</h2>
+                    <span>Background Erase</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="quick-link-section">
+        <div class="wrap center">
+            <span class="row-label" style="background-color:#7e3299;font-size: large;">Brief Overview</span>
+            <h2 class="row-title">Your Collections</h2>
+            <p style="font-size: large;">Here we collected the most awesome and Photo Editing features people are looking for!</p> 
+        </div>
+        <div class="wrap">
+            <ul class="quick-links">
+                <li>
+                    <a href="" title="">
+                        <img src="/static/image1 (1).png" class="ic" width="22" height="22" loading="lazy">
+                        Rotation
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <img src="/static/image1 (2).png" class="ic" width="22" height="22" loading="lazy">
+                        Cropping
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <img src="/static/image1 (3).png" class="ic" width="22" height="22" loading="lazy">
+                        Background Remover
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <img src="/static/image1 (4).png" class="ic" width="22" height="22" loading="lazy">
+                        Background addition
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <img src="/static/image1 (5).png" class="ic" width="22" height="22" loading="lazy">
+                        Text Adding
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <img src="/static/image1 (6).png" class="ic" width="22" height="22" loading="lazy">
+                        Background Remover
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>

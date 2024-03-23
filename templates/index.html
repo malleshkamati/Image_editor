@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box with Buttons</title>
+  <link rel="stylesheet"  href="/static/index.css">
+</head>
+<body>
+    <header id="header">
+        <div class="head-links">
+          <a id="logo"  aria-label="Photo editor ">
+            <img src="/static/logo.png"  width="160" height="38" />
+        </a>
+        </div>
+        <div class="head-links">
+          <button class="button" ><a href="/">Home</a></button>
+        </div>
+
+    </header>
+    <div class="outer-box">
+      <div class="leftbox">
+        <div class="inner-box">
+          <form action="/features" method="post"  enctype="multipart/form-data">
+              <input class="pictureinput" type="file" name="image" accept="image/*" required>
+              {% if img_base64 %}
+              <img src="data:image/jpeg;base64,{{ img_base64 }}" class="image">
+              {% endif %}
+              <button  class="button" type="submit">Upload</button>
+          </form>
+
+      </div>
+      <div class="buttonclass">
+        <p>Rotate </p>
+          <form action="/feature1" method="post" enctype="multipart/form-data">
+            Rotate by:  <input type="number" name="angle" value="0" min="0" max="360" required> 
+            <button type="submit" class="button">Rotate</button>
+            </form>
+      </div>
+      <div class="buttonclass">
+        <form action="/feature3" method="post">
+         <p>Blur</p><input type="number" name="stepsize" id="stepsize" min="1" max="9" required>
+          <button type="submit" class="button">Blur image</button>
+        </form>
+    </div>
+      <div class="buttonclass">
+        <div class="buttonheader"  class="download">
+          <form action="/feature4" method="post">
+            <button type="submit" name="removebackground" class="button">Remove Background</button>
+            </form>
+        </div>
+      </div>
+      <div class="buttonclass">
+        <div class="buttoninner" class="download">
+          <form action="{{ url_for('download', filename=output_filename) }}" method="GET">
+            <button type="submit" class="button">Download</button>
+          </form>
+        </div>
+      </div>
+      </div>
+      <div class="button-container">
+      <div class="lastclass">
+        <form action="/feature2" method="post" enctype="multipart/form-data">
+          <p>Crop</p>
+          <input type="number" name="coordinatex" id="x" step="1" min="0" value="0">-PositionX<br>
+          <input type="number" name="coordinatey" id="y" step="1" min="0" value="0">-PositionY<br>
+          <input type="number" name="width" id="width" min="1" max="10000" step="100" value="1001" required>-Width<br>
+          <input type="number" name="height" id="height" min="1" max="10000" step="100" value="1001" required>-Height<br>
+          <button type="submit"  class="button">Crop</button>
+          </form>
+      </div>
+      <div class="lastclass" class="buttonclass" >
+          <form method="POST" action="/feature5">
+            <p>Draw</p> 
+              <select name="font" id="font">
+              <option value="calibri.ttf" >Choose a font</option>
+              <option value="arial.ttf">Arial</option>
+              <option value="times.ttf">Times</option>
+              <option value="cour.ttf">Cour</option>
+              <option value="verdana.ttf">Verdana</option>
+              <option value="comic.ttf">Comic</option>
+              <option value="georgia.ttf">Georgia</option>
+              <option value="trebuc.ttf">Trebuc</option>
+              <option value="impact.ttf">Impact</option>
+              <option value="calibri.ttf">Calibri</option>
+            </select><br>
+            <input type="number" name="font_size" value="36" min="1" max="72" required> Font Size<br> 
+            <input type="text" name="text" value="Hello, World!" required>Text<br>
+            <input type="color" name="color" value="#ffffff" required> Color<br>
+            <input type="text"  name="position" value="10,30" required>Position <br>
+            <button type="submit" value="Create" class="button">Write</button>
+          </form>
+      </div>
+      <div class="lastclass">
+        <form action="/feature6" method="post" enctype="multipart/form-data">
+          <p>Erase</p> 
+          <input type="number" name="coordinatex" id="x" step="1" min="0" value="0">-PositionX<br>
+          <input type="number" name="coordinatey" id="y" step="1" min="0" value="0">-PositionY<br>
+          <input type="number" name="width" id="width" min="1" max="10000" step="100" value="1001" required>-Width<br>
+          <input type="number" name="height" id="height" min="1" max="10000" step="100" value="1001" required>-Height <br><br>
+          <button type="submit"  class="button">Erase</button>
+          </form>
+      </div>
+    </div>
+    
+</body>
+</html>
+
