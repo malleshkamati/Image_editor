@@ -7,3 +7,4 @@ plotly
 matplotlib
 opencv-python
 rembg
+gunicorn
