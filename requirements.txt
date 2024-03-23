@@ -8,4 +8,3 @@ matplotlib
 opencv-python
 rembg
 gunicorn
-sys
