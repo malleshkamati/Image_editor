@@ -55,18 +55,28 @@ def RemoveBackground():
     im.save(byte_io, format="JPEG")
     byte_io.seek(0)  
     return byte_io
-def imagewriter(font,font_size,text,colour,position):
-    coordinates = position.split(",")
-    position=(int(coordinates[0].strip()), int(coordinates[0].strip()))
-    im= Image.open('rotated_image.jpg')
-    draw = ImageDraw.Draw(im)
-    font = ImageFont.truetype(font, font_size)
-    draw.text(position, text, fill=colour, font=font,align=position)
+# def imagewriter(font,font_size,text,colour,position):
+#     coordinates = position.split(",")
+#     position=(int(coordinates[0].strip()), int(coordinates[0].strip()))
+#     im= Image.open('rotated_image.jpg')
+#     draw = ImageDraw.Draw(im)
+#     font = ImageFont.truetype(font, font_size)
+#     draw.text(position, text, fill=colour, font=font,align=position)
+
+#     byte_io = io.BytesIO()
+#     im.save(byte_io, format="JPEG")
+#     byte_io.seek(0)  
+#     return byte_io
+def apply_enhancers(slider):
+    im = Image.open('temp_image.jpg')
+    brighter = ImageEnhance.Brightness(im)
+    im= brighter.enhance(slider['bright'])
 
     byte_io = io.BytesIO()
     im.save(byte_io, format="JPEG")
-    byte_io.seek(0)  
+    byte_io.seek(0)
     return byte_io
+    
 def erase_region(top_left_x, top_left_y, width, height):
     im= Image.open('rotated_image.jpg').convert('RGB')
     img_arr = np.array(im)
@@ -113,8 +123,8 @@ def features():
                     return redirect('/feature3',temp_filename=temp_filename)
                 if request.form.get('removebackground'):
                     return redirect('/feature4',temp_filename=temp_filename)
-                if request.form.get('font'):
-                    return redirect('/feature4',temp_filename=temp_filename)
+                if request.form.get('brightness'):
+                    return redirect('/feature5',temp_filename=temp_filename)
                 return render_template('index.html', img_base64=img_base64)
         except (IOError, OSError) as e:
             return render_template('error.html')
@@ -174,21 +184,35 @@ def feature4():
         img_base64 = base64.b64encode(img_byte_io.read()).decode()
         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
 
+# @app.route('/feature5', methods=['GET', 'POST'])
+# def feature5():
+#     if request.method == 'POST':
+#         font=request.form.get('font')
+#         font_size=int(request.form.get('font_size'))
+#         text=request.form.get('text')
+#         colour=request.form.get('color')
+#         position=request.form.get('position')
+#         img_byte_io = imagewriter(font,font_size,text,colour,position)
+#         global output_filename
+#         output_filename = 'rotated_image.jpg'
+#         with open(output_filename, 'wb') as output_file:
+#             output_file.write(img_byte_io.getvalue())
+#         img_base64 = base64.b64encode(img_byte_io.read()).decode()
+#         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
+
 @app.route('/feature5', methods=['GET', 'POST'])
 def feature5():
     if request.method == 'POST':
-        font=request.form.get('font')
-        font_size=int(request.form.get('font_size'))
-        text=request.form.get('text')
-        colour=request.form.get('color')
-        position=request.form.get('position')
-        img_byte_io = imagewriter(font,font_size,text,colour,position)
+        slider_value = float(request.form.get('brightness'))  # Convert to float
+        slider = {'bright': slider_value}
+        img_byte_io = apply_enhancers(slider)
         global output_filename
         output_filename = 'rotated_image.jpg'
         with open(output_filename, 'wb') as output_file:
             output_file.write(img_byte_io.getvalue())
         img_base64 = base64.b64encode(img_byte_io.read()).decode()
         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
+
 
 @app.route('/feature6', methods=['GET', 'POST'])
 def feature6():
