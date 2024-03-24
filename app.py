@@ -196,7 +196,8 @@ def feature4():
 @app.route('/feature5', methods=['GET', 'POST'])
 def feature5():
     if request.method == 'POST':
-        font = "calibri.ttf"  # Default font
+        # font = "calibri.ttf"  # Default font
+        font = ImageFont.load_default()
         font_size = int(request.form.get('font_size'))
         text = request.form.get('text')
         colour = request.form.get('color')
