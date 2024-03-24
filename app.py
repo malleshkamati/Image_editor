@@ -14,6 +14,10 @@ import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 import cv2
 import rembg
+from PIL import ImageEnhance
+
+
+
 
 app = Flask(__name__)
 #functions
