@@ -94,28 +94,30 @@ def features():
         temp_filename = 'temp_image.jpg'
         img_file.save(temp_filename)
         global img
-
-        with Image.open(temp_filename) as img:
-            global output_filename
-            output_filename = 'rotated_image.jpg'
-            img.save(output_filename)
-
-            img_byte_array = io.BytesIO()
-            img.save(img_byte_array, format='JPEG')
-
-            img_byte_array = img_byte_array.getvalue()
-            img_base64 = base64.b64encode(img_byte_array).decode('utf-8')
-            if request.form.get('angle'):
-                return redirect('/feature1',temp_filename=temp_filename)
-            if request.form.get('width'):
-                return redirect('/feature2',temp_filename=temp_filename)
-            if request.form.get('stepsize'):
-                return redirect('/feature3',temp_filename=temp_filename)
-            if request.form.get('removebackground'):
-                return redirect('/feature4',temp_filename=temp_filename)
-            if request.form.get('font'):
-                return redirect('/feature4',temp_filename=temp_filename)
-            return render_template('index.html', img_base64=img_base64)
+        try:
+            with Image.open(temp_filename) as img:
+                global output_filename
+                output_filename = 'rotated_image.jpg'
+                img.save(output_filename)
+    
+                img_byte_array = io.BytesIO()
+                img.save(img_byte_array, format='JPEG')
+    
+                img_byte_array = img_byte_array.getvalue()
+                img_base64 = base64.b64encode(img_byte_array).decode('utf-8')
+                if request.form.get('angle'):
+                    return redirect('/feature1',temp_filename=temp_filename)
+                if request.form.get('width'):
+                    return redirect('/feature2',temp_filename=temp_filename)
+                if request.form.get('stepsize'):
+                    return redirect('/feature3',temp_filename=temp_filename)
+                if request.form.get('removebackground'):
+                    return redirect('/feature4',temp_filename=temp_filename)
+                if request.form.get('font'):
+                    return redirect('/feature4',temp_filename=temp_filename)
+                return render_template('index.html', img_base64=img_base64)
+        except (IOError, OSError) as e:
+            return render_template('error.html')
     return render_template('index.html')
 
 @app.route('/feature1', methods=['GET', 'POST'])
