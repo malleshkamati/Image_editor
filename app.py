@@ -42,7 +42,7 @@ def Blurring(stepsize):
     im.save(byte_io, format="JPEG")
     byte_io.seek(0)  
     return byte_io
-def RemoveBackground():
+def RemoveBackground(name):
     # input_image = Image.open()
     im = Image.open('rotated_image.jpg')
     input_array = np.array(im)
@@ -113,8 +113,8 @@ def features():
                     return redirect('/feature3',temp_filename=temp_filename)
                 if request.form.get('removebackground'):
                     return redirect('/feature4',temp_filename=temp_filename)
-                if request.form.get('font'):
-                    return redirect('/feature4',temp_filename=temp_filename)
+                if request.form.get('text'):
+                    return redirect('/feature5',temp_filename=temp_filename)
                 return render_template('index.html', img_base64=img_base64)
         except (IOError, OSError) as e:
             return render_template('error.html')
@@ -166,7 +166,8 @@ def feature3():
 def feature4():
     if request.method == 'POST':
         # coordinate = request.form.get('coordinate')
-        img_byte_io = RemoveBackground()
+        name=0
+        img_byte_io = RemoveBackground(name)
         global output_filename
         output_filename = 'rotated_image.jpg'
         with open(output_filename, 'wb') as output_file:
@@ -209,25 +210,6 @@ def feature5():
             output_file.write(img_byte_io.getvalue())
         img_base64 = base64.b64encode(img_byte_io.read()).decode()
         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
