@@ -100,7 +100,7 @@ header{margin:0 auto;
     z-index:3}
 #image-generator-top h1 strong{
     -webkit-text-fill-color:transparent;
-    background:linear-gradient(130deg,#1eb1db,#1eb1db);
+/*     background:linear-gradient(130deg,#1eb1db,#1eb1db); */
     -webkit-background-clip:text;
     background-clip:text;
     background-size:cover;
@@ -237,5 +237,6 @@ menu,ol,ul{
     height:22px;
     width:22px}
 #photo-editing-text h1 strong{
-    background-color: red;
+/*     background-color: red; */
+    background-color: #ddd;
 }
