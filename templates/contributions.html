@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributions</title>
+    <style>
+        body{
+            background-image:linear-gradient(141deg,#9c26d7,#1eb1db);
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content{
+            background-color: transparent;
+            border-style: dashed;
+            border-radius: 10px;
+            padding: 5%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin: 4%;
+        }
+
+        img{
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+        }
+        P{
+            color: #000;
+            font-size: medium;
+        }
+        .home{
+            display: inline-block;
+            background-image: linear-gradient(141deg,#9c26d7,#1eb1db);
+            border-radius: 10px;
+            text-decoration: none;
+            height: fit-content;
+            width: fit-content;
+            padding: 10px;
+            margin-left: 80%;
+            margin-bottom: -15px;
+        }
+        a{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="photo">
+            <img src="/static/image1 (1).png" alt="">
+        </div>
+        <P>
+            <strong>Mallesh Kamati</strong><br>
+            Selection and Implementation of filters. <br>
+            Selection of UI/UX features.<br>
+            Report writing.<br>
+            Rendering of Website.<br>
+        </P>
+        <div class="photo">
+            <img src="/static/sanjayvp.jpg" alt="">
+        </div>
+        <p>
+            <strong>Sanjay V P</strong><br>
+            Implementation of basic filters<br>
+            Integration of filters with flask <br>
+            Implementation of binary to text conversion using Base64<br>
+            Frontend using HTML and CSS.<br>
+        </p>
+        <div class="photo">
+            <a href="/templates/home.html" class="home">Home</a>
+        </div>
+    </div>
+
+</body>
+</html>
