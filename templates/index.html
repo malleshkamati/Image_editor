@@ -103,48 +103,27 @@
 
 
 <!-- Draw feature form-->
-<div class="lastclass" class="buttonclass" >
+<!-- <div class="lastclass" class="buttonclass" >
     <form method="POST" action="/feature5">
-        <p>Draw</p>
+        <p>Draw</p> -->
         <!-- Removed the select element for font -->
-        <input type="number" name="font_size" value="36" min="1" max="72" required> Font Size<br> 
+<!--         <input type="number" name="font_size" value="36" min="1" max="72" required> Font Size<br> 
         <input type="text" name="text" value="Hello, World!" required> Text<br>
         <input type="color" name="color" value="#ffffff" required> Color<br>
         <input type="text" name="position" value="10,30" required> Position <br>
         <button type="submit" value="Create" class="button">Write</button>
     </form>
-</div>
+</div> -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="lastclass" class="buttonclass" >
+      <form method="POST" action="/feature5">
+        <p>Brightness</p> 
+        <form action="/feature5" method="post">
+          <label for="bright">Brightness Enhancement:</label><br>
+          <input type="range" name="brightness" min="0" max="2" step="0.1" value="1"><br><br>
+          <button type="submit"  class="button">Enhance</button>
+      </form>
+  </div>
 
 <!--Erase form feature-->
       <div class="lastclass">
