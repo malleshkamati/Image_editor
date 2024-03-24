@@ -174,21 +174,62 @@ def feature4():
         img_base64 = base64.b64encode(img_byte_io.read()).decode()
         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
 
+# @app.route('/feature5', methods=['GET', 'POST'])
+# def feature5():
+#     if request.method == 'POST':
+#         font=request.form.get('font')
+#         font_size=int(request.form.get('font_size'))
+#         text=request.form.get('text')
+#         colour=request.form.get('color')
+#         position=request.form.get('position')
+#         img_byte_io = imagewriter(font,font_size,text,colour,position)
+#         global output_filename
+#         output_filename = 'rotated_image.jpg'
+#         with open(output_filename, 'wb') as output_file:
+#             output_file.write(img_byte_io.getvalue())
+#         img_base64 = base64.b64encode(img_byte_io.read()).decode()
+#         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
+
+
+
+
 @app.route('/feature5', methods=['GET', 'POST'])
 def feature5():
     if request.method == 'POST':
-        font=request.form.get('font')
-        font_size=int(request.form.get('font_size'))
-        text=request.form.get('text')
-        colour=request.form.get('color')
-        position=request.form.get('position')
-        img_byte_io = imagewriter(font,font_size,text,colour,position)
+        font = "calibri.ttf"  # Default font
+        font_size = int(request.form.get('font_size'))
+        text = request.form.get('text')
+        colour = request.form.get('color')
+        position = request.form.get('position')
+        img_byte_io = imagewriter(font, font_size, text, colour, position)
         global output_filename
         output_filename = 'rotated_image.jpg'
         with open(output_filename, 'wb') as output_file:
             output_file.write(img_byte_io.getvalue())
         img_base64 = base64.b64encode(img_byte_io.read()).decode()
         return render_template('index.html', img_base64=img_base64, output_filename=output_filename) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @app.route('/feature6', methods=['GET', 'POST'])
 def feature6():
