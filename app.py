@@ -231,6 +231,9 @@ def feature6():
 def download(filename):
     return send_file(filename, as_attachment=True)
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('contributions.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
