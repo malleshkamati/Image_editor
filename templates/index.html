@@ -70,7 +70,7 @@
           <button type="submit"  class="button">Crop</button>
           </form>
       </div>
-      <div class="lastclass" class="buttonclass" >
+<!--       <div class="lastclass" class="buttonclass" >
           <form method="POST" action="/feature5">
             <p>Draw</p> 
               <select name="font" id="font">
@@ -91,7 +91,55 @@
             <input type="text"  name="position" value="10,30" required>Position <br>
             <button type="submit" value="Create" class="button">Write</button>
           </form>
-      </div>
+      </div> -->
+
+
+
+
+<div class="lastclass" class="buttonclass" >
+    <form method="POST" action="/feature5">
+        <p>Draw</p>
+        <!-- Removed the select element for font -->
+        <input type="number" name="font_size" value="36" min="1" max="72" required> Font Size<br> 
+        <input type="text" name="text" value="Hello, World!" required> Text<br>
+        <input type="color" name="color" value="#ffffff" required> Color<br>
+        <input type="text" name="position" value="10,30" required> Position <br>
+        <button type="submit" value="Create" class="button">Write</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
       <div class="lastclass">
         <form action="/feature6" method="post" enctype="multipart/form-data">
           <p>Erase</p> 
