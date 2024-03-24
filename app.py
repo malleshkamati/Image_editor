@@ -123,7 +123,7 @@ def features():
                     return redirect('/feature3',temp_filename=temp_filename)
                 if request.form.get('removebackground'):
                     return redirect('/feature4',temp_filename=temp_filename)
-                if request.form.get('text'):
+                if request.form.get('brightness'):
                     return redirect('/feature5',temp_filename=temp_filename)
                 return render_template('index.html', img_base64=img_base64)
         except (IOError, OSError) as e:
