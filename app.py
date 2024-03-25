@@ -16,6 +16,8 @@ import cv2
 import rembg
 from PIL import ImageEnhance
 
+from rembg import remove
+
 
 
 
