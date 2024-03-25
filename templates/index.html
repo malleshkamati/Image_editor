@@ -66,15 +66,15 @@
       </div>
       </div>
 <!-- Crop feature form-->
-      <div class="button-container">
+      <div class="button-container">  
       <div class="lastclass">
-        <form action="/feature2" method="post" enctype="multipart/form-data">
-          <p>Crop</p>
+        <form action="/feature6" method="post" enctype="multipart/form-data">
+          <p>Erase</p> 
           <input type="number" name="coordinatex" id="x" step="1" min="0" value="0">-PositionX<br>
           <input type="number" name="coordinatey" id="y" step="1" min="0" value="0">-PositionY<br>
           <input type="number" name="width" id="width" min="1" max="10000" step="100" value="1001" required>-Width<br>
-          <input type="number" name="height" id="height" min="1" max="10000" step="100" value="1001" required>-Height<br>
-          <button type="submit"  class="button">Crop</button>
+          <input type="number" name="height" id="height" min="1" max="10000" step="100" value="1001" required>-Height <br><br>
+          <button type="submit"  class="button">Erase</button>
           </form>
       </div>
 <!--       <div class="lastclass" class="buttonclass" >
@@ -126,14 +126,14 @@
   </div>
 
 <!--Erase form feature-->
-      <div class="lastclass">
-        <form action="/feature6" method="post" enctype="multipart/form-data">
-          <p>Erase</p> 
+        <div class="lastclass">
+        <form action="/feature2" method="post" enctype="multipart/form-data">
+          <p>Crop</p>
           <input type="number" name="coordinatex" id="x" step="1" min="0" value="0">-PositionX<br>
           <input type="number" name="coordinatey" id="y" step="1" min="0" value="0">-PositionY<br>
           <input type="number" name="width" id="width" min="1" max="10000" step="100" value="1001" required>-Width<br>
-          <input type="number" name="height" id="height" min="1" max="10000" step="100" value="1001" required>-Height <br><br>
-          <button type="submit"  class="button">Erase</button>
+          <input type="number" name="height" id="height" min="1" max="10000" step="100" value="1001" required>-Height<br>
+          <button type="submit"  class="button">Crop</button>
           </form>
       </div>
     </div>
