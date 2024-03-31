@@ -2,51 +2,56 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <!-- <meta name="robots" content="index, follow"> -->
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
-        <link rel="stylesheet"  href="/static/home.css">
         <title>Home</title>
+        <!-- stylesheets -->
+        <link rel="stylesheet"  href="/static/home.css">
+        <!-- favicon -->
         <link rel="icon" type="image/x-icon" href="/static/title.png">
     </head>
 <body>
-    <div class="header-wrap">
+    <!-- top section -->
+    <section class="header-wrap">
         <header id="header">
             <!-- logo of website -->
-            <a id="logo" href="/"  aria-label="Photo editor ">
+            <a id="logo" href="/"  >
                 <img src="/static/logo.png"  width="160" height="38" />
             </a>
-            <!-- pricing -->
-           <div class="head-links">
+            <!-- spacing div -->
+            <div class="head-links">
             </div>
-            <div id="head-login" class="head-text-button" title="signin here!" aria-label="headerLoginEditor" style="color:#fff;font-size: 14px;font-weight: bold;">
+            <!-- login button -->
+            <div id="head-login" class="head-text-button" title="signin here!"  style="color:#fff;font-size: 14px;font-weight: bold;">
                 Sign up / Log in
             </div>
-            <!-- signin -->
-            <div id="head-login" class="head-text-button"  aria-label="headerLoginEditor" style="color:#fff;font-size: 14px;font-weight: bold;">
-            <a href="{{ url_for('about') }}" class="head-link" style="color:#fff;font-size: 14px;font-weight: bold;">About</a>
+            <!-- About -->
+            <div id="head-login" class="head-text-button">
+                <a href="{{ url_for('about') }}" class="head-link" style="color:#fff;font-size: 14px;font-weight: bold;">About</a>
             </div>
         </header>
-    </div>
-
+    </section>
+    <!-- Main Section -->
     <section id="photo-editor-section">
-        <div id="image-editor-space"></div>
+        <!-- space div -->
+        <div id="image-editor-space">
+        </div>
+        <!-- written div -->
         <div id="image-generator-top" class="wrap">
             <div id="photo-editing-text">
                 <h1>Free Online<strong>Image Modifier</strong>Designing and Enhancing the images </h1>
                 <p>The suite for all your creative photo and design editing needs directly in your desktop, all free. <br> Effortless image enhancement!</p>
                 <br>
-                <!-- two boxes -->
-                <div class="buttons top-60">
-                    <a href="{{ url_for('features') }}" class="button outline large rounded"><img src="/static/image1 (5).png"  width="24" height="24">Title Addition</a>
-                    <a href="{{ url_for('features') }}"  class="button outline large rounded"><img src="/static/image1 (3).png"  width="24" height="24">Background Remover</a>
+                <!-- glowing buttons -->
+                <div class="buttons">
+                    <a href="{{ url_for('features') }}" class="button rounded"><img src="/static/image1 (5).png"  width="24" height="24">Enhancement    </a>
+                    <a href="{{ url_for('features') }}"  class="button rounded"><img src="/static/image1 (3).png"  width="24" height="24">Background Remover</a>
                 </div>
             </div>
         </div>
-
-        <div id="image-editor-grow"></div>
+        <!-- translating box -->
         <div id="app-selector-section">
             <div class="wrap suite">
-                <a id="editor" href="{{ url_for('features') }}" class="is-desktop" >
+                <a id="editor" href="{{ url_for('features') }}" >
                     <img src="/static/photo1.png" width="96" height="96"> 
                     <h2> Editor</h2>
                     <span>Advanced Photo Editor</span>
@@ -56,9 +61,9 @@
                     <h2> Blur </h2>
                     <span>Blur out distractions</span>
                 </a>
-                <a id="designer" href="{{ url_for('features') }}" class="is-desktop" >
+                <a id="designer" href="{{ url_for('features') }}">
                     <img src="/static/photo3.png" width="96" height="96" >
-                    <h2>Crop n erase</h2>
+                    <h2>Crop and erase</h2>
                     <span>flawless image</span>
                 </a>
                 <a id="remove-background" href="{{ url_for('features') }}" >
@@ -69,48 +74,50 @@
             </div>
         </div>
     </section>
-
+    <!-- final section -->
     <section id="quick-link-section">
+        <!-- header of final section -->
         <div class="wrap center">
             <span class="row-label" style="background-color:#7e3299;font-size: large;">Brief Overview</span>
             <h2 class="row-title">Your Collections</h2>
             <p style="font-size: large;">Here we collected the most awesome and Photo Editing features people are looking for!</p> 
         </div>
+        <!-- table of final section -->
         <div class="wrap">
             <ul class="quick-links">
                 <li>
                     <a href="" title="">
-                        <img src="/static/image1 (1).png" class="ic" width="22" height="22" loading="lazy">
+                        <img src="/static/image1 (1).png"  width="22" height="22" >
                         Rotation
                     </a>
                 </li>
                 <li>
                     <a href="" title="">
-                        <img src="/static/image1 (2).png" class="ic" width="22" height="22" loading="lazy">
+                        <img src="/static/image1 (2).png"  width="22" height="22" >
                         Cropping
                     </a>
                 </li>
                 <li>
                     <a href="" title="">
-                        <img src="/static/image1 (3).png" class="ic" width="22" height="22" loading="lazy">
+                        <img src="/static/image1 (3).png"  width="22" height="22" >
                         Background Remover
                     </a>
                 </li>
                 <li>
                     <a href="" title="">
-                        <img src="/static/image1 (4).png" class="ic" width="22" height="22" loading="lazy">
+                        <img src="/static/image1 (4).png"  width="22" height="22" >
                         Background addition
                     </a>
                 </li>
                 <li>
                     <a href="" title="">
-                        <img src="/static/image1 (5).png" class="ic" width="22" height="22" loading="lazy">
+                        <img src="/static/image1 (5).png"  width="22" height="22" >
                         Text Adding
                     </a>
                 </li>
                 <li>
                     <a href="" title="">
-                        <img src="/static/image1 (6).png" class="ic" width="22" height="22" loading="lazy">
+                        <img src="/static/image1 (6).png"  width="22" height="22" >
                         Background Remover
                     </a>
                 </li>
