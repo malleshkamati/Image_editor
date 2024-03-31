@@ -9,3 +9,13 @@ opencv-python
 rembg
 gunicorn
 IPython
+jsonschema
+
+onnxruntime
+
+
+pooch
+pymatting
+
+scipy
+tqdm
